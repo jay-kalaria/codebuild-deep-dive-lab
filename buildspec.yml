@@ -1,0 +1,35 @@
+version: 0.2
+
+env:
+  variables:
+    EXPERIMENT: baseline
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto17
+    commands:
+      - java -version
+      - mvn -version
+  pre_build:
+    commands:
+      - bash scripts/capture_environment.sh
+  build:
+    commands:
+      - bash scripts/run_experiment.sh
+    finally:
+      - bash scripts/finalize.sh
+
+reports:
+  junit:
+    files:
+      - '*.xml'
+    base-directory: target/surefire-reports
+    file-format: JUNITXML
+
+artifacts:
+  files:
+    - 'target/*.jar'
+    - 'target/surefire-reports/*.xml'
+    - 'diagnostics/**/*'
+  discard-paths: no

@@ -1,0 +1,33 @@
+{
+  "builds": [
+    {
+      "id": "example:illustrative-only",
+      "buildStatus": "SUCCEEDED",
+      "environment": {
+        "computeType": "BUILD_GENERAL1_SMALL"
+      },
+      "phases": [
+        {
+          "phaseType": "QUEUED",
+          "durationInSeconds": 2,
+          "phaseStatus": "SUCCEEDED"
+        },
+        {
+          "phaseType": "PROVISIONING",
+          "durationInSeconds": 25,
+          "phaseStatus": "SUCCEEDED"
+        },
+        {
+          "phaseType": "BUILD",
+          "durationInSeconds": 35,
+          "phaseStatus": "SUCCEEDED"
+        },
+        {
+          "phaseType": "UPLOAD_ARTIFACTS",
+          "durationInSeconds": 3,
+          "phaseStatus": "SUCCEEDED"
+        }
+      ]
+    }
+  ]
+}

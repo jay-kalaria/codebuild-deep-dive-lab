@@ -1,0 +1,7 @@
+.m2repo/
+target/
+diagnostics/
+*.log
+.idea/
+.vscode/
+.DS_Store
